@@ -20,6 +20,14 @@ function draw() {
     drawBall();
     x += dx;
     y += dy;
+
+    if(x + dx > canvas.width-ballRadius || x + dx < 0) {
+        dx = -dx;
+    }
+
+    if(y + dy > canvas.height-ballRadius || y + dy < 0) {
+        dy = -dy;
+    }
 }
 
 setInterval(draw, 10);
